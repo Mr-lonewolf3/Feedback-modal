@@ -1,0 +1,189 @@
+/*including fonts*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*Body styling*/
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: rgba(208, 202, 242, 255);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Container styling*/
+.container {
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Box styling*/
+.container-box {
+  flex-direction: column;
+  display: flex;
+  background-color: rgba(27, 24, 51, 255);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(189, 190, 207, 255);
+}
+
+h2 {
+  font-family: 'PT Serif', serif;
+  color: rgba(254, 254, 255, 255);
+  text-align: center;
+  line-height: 1.3;
+}
+
+h2 + h2 {
+    margin-top: 5px;
+    margin-bottom: 20px; /* ✅ add spacing below the last h2 */
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap; /* ✅ keep everything in one line */
+    width: 100%;
+    overflow-x: auto; /* optional scroll if screen is tight */
+  }
+  
+  .rating-btn {
+    width: 35px; /* ✅ fixed width for all, including "10" */
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(43, 45, 70, 255);
+    background-color: rgba(27, 24, 51, 255);
+    color: rgba(178, 181, 200, 255);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  
+
+.rating-btn:hover {
+  background-color: #c0d0ff;
+}
+
+.rating-btn.selected {
+  background-color: #4d79ff;
+  color: white;
+}
+
+.labels {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(216, 217, 220, 255);
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#cancel-btn,
+#submit-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+#cancel-btn {
+  background-color: transparent;
+  color: rgba(212, 214, 221, 255);
+  border: 1px solid rgba(104, 76, 207, 255);
+}
+
+#cancel-btn:hover {
+  background-color: #7326c3;
+  color: white;
+}
+
+#submit-btn {
+  background-color: rgba(123, 89, 244, 255);
+  color: rgba(242, 240, 251, 255);
+}
+
+#submit-btn:hover {
+  background-color: #c086ff;
+}
+
+/* Popup Message */
+.popup-message {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup-message.error {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.popup-message.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .rating-btn {
+    flex-basis: 18%;
+  }
+}

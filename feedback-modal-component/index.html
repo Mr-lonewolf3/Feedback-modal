@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Feedback Modal Component - FrontendPro Challenge</title>
+  </head>
+  <body>
+    <!-- Write your HTML here -->
+    <div class="container" id="overlay">
+      <div class="container-box animate-in" id="modalBox">
+        <button class="close-btn" id="close-btn">x</button>
+        <h2>How likely are you to recommend FrontendPro</h2>
+        <h2>to someone you know?</h2>
+        <div class="rating" id="rating"></div>
+        <div class="labels">
+          <span>Not likely at all</span>
+          <span>Extremely likely</span>
+        </div>
+  
+        <!---Creating the submit and Cancel button-->
+        <div class="buttons">
+          <button id="cancel-btn">Cancel</button>
+          <button id="submit-btn">Submit</button>
+        </div>
+  
+        <!-- Popup message appears here -->
+        <div id="popup-message" class="popup-message"></div>
+      </div>
+    </div>
+  
+    <!--For External JS-->
+    <script src="src/script.js"></script>
+  </body>
+</html>
